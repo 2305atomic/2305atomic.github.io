@@ -1,0 +1,19 @@
+# Simple .htaccess for TEWUNEED
+DirectoryIndex index.php index.html
+
+# Block access to sensitive files
+<Files ~ "^\.">
+    Require all denied
+</Files>
+
+<Files ~ "\.sql$">
+    Require all denied
+</Files>
+
+<Files ~ "\.log$">
+    Require all denied
+</Files>
+
+# Error pages
+ErrorDocument 404 /tewuneed2/404.php
+ErrorDocument 500 /tewuneed2/500.php
